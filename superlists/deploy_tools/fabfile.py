@@ -58,4 +58,5 @@ def _update_static_files(source_folder):
 
 def _update_database(source_folder):
     run(f'echo $(whoami)')
+    run(f'cd {source_folder}/superlists && ../../virtualenv/bin/python3 manage.py makemigrations --noinput')
     run(f'cd {source_folder}/superlists && ../../virtualenv/bin/python3 manage.py migrate --noinput')
