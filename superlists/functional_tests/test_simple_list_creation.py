@@ -9,6 +9,7 @@ class NewVisitorTest(FunctionalTest):
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its homepage
         self.browser.get(self.live_server_url)
+        self.get_item_input_box().send_keys(Keys.ENTER)
 
         # She notices the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)
